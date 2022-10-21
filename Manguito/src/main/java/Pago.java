@@ -15,7 +15,7 @@ public abstract class Pago implements java.io.Serializable {
 	private String emailDonador;
 	@Column
 	private String telefonoDonador;
-	//asdasda
+	
 	public double getPrecio() {
 		return precio;
 	}

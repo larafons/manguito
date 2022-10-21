@@ -1,3 +1,5 @@
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,5 +9,7 @@ public class Categoria {
 	private Long id;
 	@Column
 	private String nombre;
+	@ManyToMany
+	private Set<Emprendimiento> emprendimientos;
 
 }
