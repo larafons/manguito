@@ -1,13 +1,21 @@
 import javax.persistence.*;
-//????????????????????????????????
-public abstract class Pago {
-	
+
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+public abstract class Pago implements java.io.Serializable {
+	@Id @GeneratedValue
+	@Column(name="pago_id")
+	private Long id;
+	@Column
 	private double precio;
+	@Column
 	private String mensaje;
+	@Column
 	private String nombreDonador;
+	@Column
 	private String emailDonador;
+	@Column
 	private String telefonoDonador;
-	
+
 	public double getPrecio() {
 		return precio;
 	}
