@@ -1,6 +1,7 @@
 import java.awt.Image;
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Set;
 
 @Entity
 public class Emprendimiento {
@@ -25,144 +26,132 @@ public class Emprendimiento {
 	private Emprendedor emprendedor;
 	
 	@OneToMany
-	private ArrayList<String> redes;
+	private Set<String> redes;
 	
 	@OneToMany 
-	private ArrayList<Posteo> posteo;
+	private Set<Posteo> posteo;
 	
 	@OneToMany
-	private ArrayList<PlanOfrecido> planesOfrecidos;
+	private Set<PlanOfrecido> planesOfrecidos;
 	
 	@OneToMany
-	private ArrayList<Donacion> donaciones;
+	private Set<Donacion> donaciones;
 	
 	@ManyToMany 
-	private ArrayList<Categoria> categorias;
-	
-	
+	private Set<Categoria> categorias;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
-
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
 	public String getDescripcion() {
 		return descripcion;
 	}
-
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 
-
 	public Image getBanner() {
 		return banner;
 	}
-
 
 	public void setBanner(Image banner) {
 		this.banner = banner;
 	}
 
-
 	public boolean isVisualizadorManguitos() {
 		return visualizadorManguitos;
 	}
-
 
 	public void setVisualizadorManguitos(boolean visualizadorManguitos) {
 		this.visualizadorManguitos = visualizadorManguitos;
 	}
 
-
 	public boolean isVisualizarDonantes() {
 		return visualizarDonantes;
 	}
-
 
 	public void setVisualizarDonantes(boolean visualizarDonantes) {
 		this.visualizarDonantes = visualizarDonantes;
 	}
 
-
-	public ArrayList<String> getRedes() {
-		return redes;
-	}
-
-
-	public void setRedes(ArrayList<String> redes) {
-		this.redes = redes;
-	}
-
-
 	public double getPrecioManguito() {
 		return precioManguito;
 	}
-
 
 	public void setPrecioManguito(double precioManguito) {
 		this.precioManguito = precioManguito;
 	}
 
-
 	public Emprendedor getEmprendedor() {
 		return emprendedor;
 	}
-
 
 	public void setEmprendedor(Emprendedor emprendedor) {
 		this.emprendedor = emprendedor;
 	}
 
+	public Set<String> getRedes() {
+		return redes;
+	}
 
-	public ArrayList<Posteo> getPosteo() {
+	public void setRedes(Set<String> redes) {
+		this.redes = redes;
+	}
+
+	public Set<Posteo> getPosteo() {
 		return posteo;
 	}
 
-
-	public void setPosteo(ArrayList<Posteo> posteo) {
+	public void setPosteo(Set<Posteo> posteo) {
 		this.posteo = posteo;
 	}
 
-
-	public ArrayList<PlanOfrecido> getPlanesOfrecidos() {
+	public Set<PlanOfrecido> getPlanesOfrecidos() {
 		return planesOfrecidos;
 	}
 
-
-	public void setPlanesOfrecidos(ArrayList<PlanOfrecido> planesOfrecidos) {
+	public void setPlanesOfrecidos(Set<PlanOfrecido> planesOfrecidos) {
 		this.planesOfrecidos = planesOfrecidos;
 	}
 
-
-	public ArrayList<Donacion> getDonaciones() {
+	public Set<Donacion> getDonaciones() {
 		return donaciones;
 	}
 
-
-	public void setDonaciones(ArrayList<Donacion> donaciones) {
+	public void setDonaciones(Set<Donacion> donaciones) {
 		this.donaciones = donaciones;
 	}
 
-
-	public ArrayList<Categoria> getCategorias() {
+	public Set<Categoria> getCategorias() {
 		return categorias;
 	}
 
-
-	public void setCategorias(ArrayList<Categoria> categorias) {
+	public void setCategorias(Set<Categoria> categorias) {
 		this.categorias = categorias;
 	}
-
-
-	public Emprendimiento(String url) {
-		this.url= url;
-	}
+	
 	
 	
 
