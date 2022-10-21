@@ -12,7 +12,7 @@ public class Donacion extends Pago{
 	private LocalDate fecha;
 	@Column
 	private int cantManguitos;
-	//aca que?
+	@OneToOne
 	private Emprendimiento emprendimiento;
 	
 	public LocalDate getFecha() {

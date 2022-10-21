@@ -21,7 +21,7 @@ public class GenericDAOHibernateJPA<T> implements GenericDAO<T>{
 
 	@Override
 	public void borrar(Object entity) {
-		EntityManager em = EMF.getEMF().createEntityManager();
+		 EntityManager em = EMF.getEMF().createEntityManager();
 		 EntityTransaction tx = null;
 		 try {
 		 tx = em.getTransaction();

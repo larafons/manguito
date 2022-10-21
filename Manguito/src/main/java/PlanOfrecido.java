@@ -14,7 +14,7 @@ public class PlanOfrecido {
 	private boolean vigente;
 	@OneToMany //????????
 	private List<PlanComprado> planesComprados;
-	@Column
+	@OneToOne
 	private Emprendimiento emprendimiento;
 	
 	public String getBeneficio() {
