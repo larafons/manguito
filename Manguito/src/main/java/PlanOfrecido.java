@@ -1,11 +1,20 @@
 import java.util.List;
 
+import javax.persistence.*;
+
 public class PlanOfrecido {
-	
+	@Id @GeneratedValue
+	@Column(name="plan_ofrecido_id")
+	private Long id;
+	@Column
 	private String beneficio;
+	@Column
 	private double precio;
+	@Column
 	private boolean vigente;
+	@OneToMany //????????
 	private List<PlanComprado> planesComprados;
+	@Column
 	private Emprendimiento emprendimiento;
 	
 	public String getBeneficio() {
