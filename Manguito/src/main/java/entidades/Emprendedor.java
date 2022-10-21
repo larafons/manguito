@@ -1,3 +1,4 @@
+package entidades;
 import javax.persistence.*;
 
 @Entity
@@ -11,8 +12,12 @@ public class Emprendedor {
 	@Column
 	private String usuario;
 	@OneToOne
-	
 	private Emprendimiento emprendimiento;
+	
+	public Emprendedor(String passwd, String usuario) {
+		this.passwd = passwd;
+		this.usuario = usuario;
+	}
 	public Long getId() {
 		return id;
 	}

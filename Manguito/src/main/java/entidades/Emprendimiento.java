@@ -1,5 +1,7 @@
+package entidades;
 import java.awt.Image;
 import javax.persistence.*;
+
 import java.util.ArrayList;
 import java.util.Set;
 
@@ -39,7 +41,18 @@ public class Emprendimiento {
 	
 	@ManyToMany 
 	private Set<Categoria> categorias;
+	
+	public Emprendimiento (String url, String nombre, String descripcion, 
+									double precioManguito, Emprendedor emprendedor) {
+		this.url = url;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.emprendedor = emprendedor;
+		
+	}
+	
 
+	
 	public Long getId() {
 		return id;
 	}

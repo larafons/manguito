@@ -1,3 +1,4 @@
+package entidades;
 import javax.persistence.*;
 
 @Entity
@@ -7,6 +8,10 @@ public class Categoria {
 	private Long id;
 	@Column
 	private String nombre;
+	
+	public Categoria(String nombre) {
+		this.nombre = nombre;
+	}
 	
 	public Long getId() {
 		return id;

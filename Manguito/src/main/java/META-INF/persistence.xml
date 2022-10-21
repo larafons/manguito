@@ -4,17 +4,18 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	version="2.1">
-	<persistence-unit name="miUP">
+	<persistence-unit name="unlp">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>mipaquete.Mensaje</class>
+		<class>entidades.Emprendimiento</class>
+		<class>entidades.Emprendedor</class>
+		<class>entidades.PlanOfrecido</class>
 		<properties>
 			<property name="hibernate.connection.driver_class"
-				value="com.mysql.jdbc.Driver" />
-			<property name="hibernate.connection.password" value="pwd3" />
-			<property name="hibernate.connection.url"
-				value="jdbc:mysql://mysql.java.linti.unlp.edu.ar/ttps_sala_bd3?useSSL=FALSE" />
-			<property name="hibernate.connection.username" value="usr3" />
-			<property name="hibernate.default_schema" value="manguito" />
+				value="com.mysql.cj.jdbc.Driver" />
+			<property name="hibernate.connection.password" value="" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost/manguito?useSSL=false" />
+				<!-- value="jdbc:mysql://mysql.java.linti.unlp.edu.ar/ttps_sala_bd3?useSSL=false" -->
+			<property name="hibernate.connection.username" value="root" />
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQL5InnoDBDialect " />
 		</properties>

@@ -1,3 +1,4 @@
+package entidades;
 import java.awt.Image;
 import javax.persistence.*;
 import java.time.LocalDate;
