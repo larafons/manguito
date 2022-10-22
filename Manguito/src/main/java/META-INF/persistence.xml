@@ -6,9 +6,15 @@
 	version="2.1">
 	<persistence-unit name="unlp">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>entidades.Administrador</class>
+		<class>entidades.Categoria</class>
+		<class>entidades.Donacion</class>
+		<class>entidades.Pago</class>
 		<class>entidades.Emprendimiento</class>
 		<class>entidades.Emprendedor</class>
 		<class>entidades.PlanOfrecido</class>
+		<class>entidades.PlanComprado</class>
+		<class>entidades.Posteo</class>
 		<properties>
 			<property name="hibernate.connection.driver_class"
 				value="com.mysql.cj.jdbc.Driver" />
