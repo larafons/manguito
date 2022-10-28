@@ -3,8 +3,9 @@ import java.util.List;
 
 import javax.persistence.*;
 
+@Entity
 public class PlanOfrecido {
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="plan_ofrecido_id")
 	private Long id;
 	@Column
@@ -15,7 +16,7 @@ public class PlanOfrecido {
 	private boolean vigente;
 	@OneToMany //????????
 	private List<PlanComprado> planesComprados;
-	@OneToOne
+	@ManyToOne
 	private Emprendimiento emprendimiento;
 	
 	public String getBeneficio() {

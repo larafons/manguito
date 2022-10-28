@@ -2,8 +2,9 @@ package entidades;
 import javax.persistence.*;
 
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Entity
 public abstract class Pago implements java.io.Serializable {
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="pago_id")
 	private Long id;
 	@Column

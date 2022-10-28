@@ -4,7 +4,7 @@ import javax.persistence.*;
 @Entity
 public class Emprendedor {
 	
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="administrador_id")
 	private Long id;
 	@Column

@@ -1,14 +1,26 @@
 package entidades;
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
 public class Categoria {
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="categoria_id")
 	private Long id;
 	@Column
 	private String nombre;
+	@ManyToMany
+	private Set<Emprendimiento> emprendimientos;
 	
+	public Set<Emprendimiento> getEmprendimientos() {
+		return emprendimientos;
+	}
+
+	public void setEmprendimientos(Set<Emprendimiento> emprendimientos) {
+		this.emprendimientos = emprendimientos;
+	}
+
 	public Categoria(String nombre) {
 		this.nombre = nombre;
 	}

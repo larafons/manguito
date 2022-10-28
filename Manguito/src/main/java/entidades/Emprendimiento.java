@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 public class Emprendimiento {
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="emprendimiento_id")
 	private Long id;
 	@Column
@@ -17,29 +17,30 @@ public class Emprendimiento {
 	@Column
 	private String descripcion;
 	@Column
-	private Image banner; //como se almacena en la bd??
+	private String banner; //como se almacena en la bd??
 	@Column
 	private boolean visualizadorManguitos;
 	@Column
 	private boolean visualizarDonantes;
 	@Column
 	private double precioManguito;
-	@Column
+	@OneToOne
 	private Emprendedor emprendedor;
 	
-	@OneToMany
+	/*@Column 
 	private Set<String> redes;
-	
-	@OneToMany 
+	*/
+	@OneToMany
+	@JoinColumn(name="emprendimiento")
 	private Set<Posteo> posteo;
 	
-	@OneToMany
+	@OneToMany (mappedBy="emprendimiento")
 	private Set<PlanOfrecido> planesOfrecidos;
 	
-	@OneToMany
+	@OneToMany (mappedBy="emprendimiento")
 	private Set<Donacion> donaciones;
 	
-	@ManyToMany 
+	@ManyToMany  (mappedBy="emprendimientos")
 	private Set<Categoria> categorias;
 	
 	public Emprendimiento (String url, String nombre, String descripcion, 
@@ -85,11 +86,11 @@ public class Emprendimiento {
 		this.descripcion = descripcion;
 	}
 
-	public Image getBanner() {
+	public String getBanner() {
 		return banner;
 	}
 
-	public void setBanner(Image banner) {
+	public void setBanner(String banner) {
 		this.banner = banner;
 	}
 
@@ -124,7 +125,7 @@ public class Emprendimiento {
 	public void setEmprendedor(Emprendedor emprendedor) {
 		this.emprendedor = emprendedor;
 	}
-
+	/*
 	public Set<String> getRedes() {
 		return redes;
 	}
@@ -132,7 +133,7 @@ public class Emprendimiento {
 	public void setRedes(Set<String> redes) {
 		this.redes = redes;
 	}
-
+	*/
 	public Set<Posteo> getPosteo() {
 		return posteo;
 	}
@@ -164,7 +165,6 @@ public class Emprendimiento {
 	public void setCategorias(Set<Categoria> categorias) {
 		this.categorias = categorias;
 	}
-	
 	
 	
 
