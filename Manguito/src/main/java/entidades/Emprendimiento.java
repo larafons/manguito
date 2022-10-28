@@ -27,19 +27,19 @@ public class Emprendimiento {
 	@Column
 	private Emprendedor emprendedor;
 	
-	@OneToMany
+	@Column
 	private Set<String> redes;
 	
 	@OneToMany 
 	private Set<Posteo> posteo;
 	
-	@OneToMany
+	@OneToMany(targetEntity = PlanOfrecido.class)
 	private Set<PlanOfrecido> planesOfrecidos;
 	
-	@OneToMany
+	@OneToMany(targetEntity = Donacion.class)
 	private Set<Donacion> donaciones;
 	
-	@ManyToMany 
+	@ManyToMany (targetEntity = Categoria.class)
 	private Set<Categoria> categorias;
 	
 	public Emprendimiento (String url, String nombre, String descripcion, 
