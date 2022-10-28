@@ -3,6 +3,7 @@ import java.awt.Image;
 import javax.persistence.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -30,18 +31,18 @@ public class Emprendimiento {
 	/*@Column 
 	private Set<String> redes;
 	*/
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="emprendimiento")
-	private Set<Posteo> posteo;
+	private Set<Posteo> posteo = new HashSet<Posteo>();
 	
-	@OneToMany (mappedBy="emprendimiento")
-	private Set<PlanOfrecido> planesOfrecidos;
+	@OneToMany (mappedBy="emprendimiento",cascade = CascadeType.ALL)
+	private Set<PlanOfrecido> planesOfrecidos = new HashSet<PlanOfrecido>();
 	
-	@OneToMany (mappedBy="emprendimiento")
-	private Set<Donacion> donaciones;
+	@OneToMany (mappedBy="emprendimiento",cascade = CascadeType.ALL)
+	private Set<Donacion> donaciones = new HashSet<Donacion>();
 	
-	@ManyToMany  (mappedBy="emprendimientos")
-	private Set<Categoria> categorias;
+	@ManyToMany
+	private Set<Categoria> categorias = new HashSet<Categoria>();
 	
 	public Emprendimiento (String url, String nombre, String descripcion, 
 									double precioManguito, Emprendedor emprendedor) {
@@ -175,6 +176,15 @@ public class Emprendimiento {
 
 	public void setCategorias(Set<Categoria> categorias) {
 		this.categorias = categorias;
+	}
+	
+	public void agregarCategoria(Categoria categoria){
+		this.categorias.add(categoria);
+
+	}
+	
+	public void agregarPosteo(Posteo posteo) {
+		this.posteo.add(posteo);
 	}
 	
 	

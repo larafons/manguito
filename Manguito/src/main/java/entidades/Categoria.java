@@ -1,4 +1,5 @@
 package entidades;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -10,20 +11,18 @@ public class Categoria {
 	private Long id;
 	@Column
 	private String nombre;
-	@ManyToMany
-	private Set<Emprendimiento> emprendimientos;
+
 	
 	public Categoria() {
 		super();
 	}
 
-	public Set<Emprendimiento> getEmprendimientos() {
-		return emprendimientos;
+
+	@Override
+	public String toString() {
+		return "Categoria [id=" + id + ", nombre=" + nombre + "]";
 	}
 
-	public void setEmprendimientos(Set<Emprendimiento> emprendimientos) {
-		this.emprendimientos = emprendimientos;
-	}
 
 	public Categoria(String nombre) {
 		this.nombre = nombre;

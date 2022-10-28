@@ -4,10 +4,7 @@ import java.time.LocalDate;
 
 @Entity
 public class Posteo {
-	public Posteo() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="posteo_id")
 	private Long id;
@@ -17,6 +14,14 @@ public class Posteo {
 	private String texto;
 	@Column
 	private LocalDate fecha;
+	
+	public Posteo(String texto) {
+		this.texto = texto;
+	}
+	public Posteo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	public String getFoto() {
