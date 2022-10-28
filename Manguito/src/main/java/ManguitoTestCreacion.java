@@ -14,22 +14,35 @@ public class ManguitoTestCreacion {
 		Categoria cat1 = new Categoria("Arte");
 		Categoria cat2 = new Categoria("Entretenimiento");
 		CategoriaDAO categoriaDAO = new CategoriaDAOJPA();
+		PosteoDAO posteoDAO = new PosteoDAOJPA();
 		cat1 = categoriaDAO.persistir(cat1);
 		cat2 = categoriaDAO.persistir(cat2);
 		EmprendimientoDAO emprendimientoDAO = new EmprendimientoDAOJPA();
 		emprendimiento.agregarCategoria(cat2);
 		emprendimiento.agregarCategoria(cat1);
-		emprendimientoDAO.persistir(emprendimiento);
+		emprendimiento = emprendimientoDAO.persistir(emprendimiento);
 		System.out.println("Creacion del emprendimiento");
 		System.out.println(emprendimientoDAO.recuperarTodos("id"));
-		
+		System.out.println("Categorias disponibles");
+		System.out.println(categoriaDAO.recuperarTodos("id"));
+		System.out.println(posteoDAO.recuperarTodos("id"));
+
+		emprendimiento.setNombre("Nuevo nombre");
 		Posteo posteo = new Posteo("Hola que tal");
-		PosteoDAO posteoDAO = new PosteoDAOJPA();
 		emprendimiento.agregarPosteo(posteo);
+		emprendimientoDAO.actualizar(emprendimiento);
+		System.out.println("Actualizacion del emprendimiento");
+		System.out.println(emprendimientoDAO.recuperarTodos("id"));
+		System.out.println(posteoDAO.recuperarTodos("id"));
+
+		//posteoDAO.borrar(posteo.getId()); acomodar
+		System.out.println("Emprendimiento eliminado");
+		System.out.println(emprendimientoDAO.recuperarTodos("id"));
+		System.out.println("Categorias disponibles");
+		System.out.println(categoriaDAO.recuperarTodos("id"));
+		System.out.println(posteoDAO.recuperarTodos("id"));
 		
-		
-		
-		
+
 	}
 
 }
