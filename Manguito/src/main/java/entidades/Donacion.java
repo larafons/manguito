@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Entity
 public class Donacion extends Pago{
 	
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="donacion_id")
 	private Long id;
 	@Column

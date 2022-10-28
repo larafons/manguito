@@ -1,25 +1,24 @@
 package entidades;
-import java.awt.Image;
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 public class Posteo {
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="posteo_id")
 	private Long id;
 	@Column
-	private Image foto;
+	private String foto; //ver como convertir en String
 	@Column
 	private String texto;
 	@Column
 	private LocalDate fecha;
 	
 	
-	public Image getFoto() {
+	public String getFoto() {
 		return foto;
 	}
-	public void setFoto(Image foto) {
+	public void setFoto(String foto) {
 		this.foto = foto;
 	}
 	public String getTexto() {
