@@ -5,6 +5,10 @@ import javax.persistence.*;
 
 @Entity
 public class PlanOfrecido {
+	public PlanOfrecido() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="plan_ofrecido_id")
 	private Long id;

@@ -4,6 +4,10 @@ import java.time.LocalDate;
 
 @Entity
 public class Posteo {
+	public Posteo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="posteo_id")
 	private Long id;

@@ -13,6 +13,10 @@ public class Categoria {
 	@ManyToMany
 	private Set<Emprendimiento> emprendimientos;
 	
+	public Categoria() {
+		super();
+	}
+
 	public Set<Emprendimiento> getEmprendimientos() {
 		return emprendimientos;
 	}

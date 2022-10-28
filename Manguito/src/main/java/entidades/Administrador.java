@@ -15,6 +15,11 @@ public class Administrador {
 	@Column
 	private String passwd;
 	
+	
+	
+	public Administrador() {
+		super();
+	}
 	public Long getId() {
 		return id;
 	}

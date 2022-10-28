@@ -18,6 +18,13 @@ public class Emprendedor {
 		this.passwd = passwd;
 		this.usuario = usuario;
 	}
+	
+	
+	public Emprendedor() {
+		super();
+	}
+
+
 	public Long getId() {
 		return id;
 	}

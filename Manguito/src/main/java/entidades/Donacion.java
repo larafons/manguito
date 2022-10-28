@@ -9,6 +9,9 @@ public class Donacion extends Pago{
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="donacion_id")
 	private Long id;
+	public Donacion() {
+		super();
+	}
 	@Column
 	private LocalDate fecha;
 	@Column

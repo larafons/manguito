@@ -81,10 +81,10 @@ public class GenericDAOHibernateJPA<T> implements GenericDAO<T>{
 	}
 
 	@Override
-	public List recuperarTodos(String column) {
+	public List<T> recuperarTodos(String column) {
 		Query consulta=
 				 EMF.getEMF().createEntityManager().createQuery("select e from "+ getPersistentClass().
-						 getSimpleName()+" e order by e "+column);
+						 getSimpleName()+" e order by e."+column);
 				 List<T> resultado = (List<T>)consulta.getResultList();
 				 return resultado;
 	}

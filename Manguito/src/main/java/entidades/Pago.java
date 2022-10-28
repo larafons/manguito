@@ -13,6 +13,10 @@ public abstract class Pago implements java.io.Serializable {
 	private String mensaje;
 	@Column
 	private String nombreDonador;
+	public Pago() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	@Column
 	private String emailDonador;
 	@Column

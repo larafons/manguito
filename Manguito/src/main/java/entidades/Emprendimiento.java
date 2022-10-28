@@ -52,8 +52,19 @@ public class Emprendimiento {
 		
 	}
 	
-
+	public Emprendimiento() {
+		
+	}
 	
+	@Override
+	public String toString() {
+		return "Emprendimiento [id=" + id + ", url=" + url + ", nombre=" + nombre + ", descripcion=" + descripcion
+				+ ", banner=" + banner + ", visualizadorManguitos=" + visualizadorManguitos + ", visualizarDonantes="
+				+ visualizarDonantes + ", precioManguito=" + precioManguito + ", emprendedor=" + emprendedor
+				+ ", posteo=" + posteo + ", planesOfrecidos=" + planesOfrecidos + ", donaciones=" + donaciones
+				+ ", categorias=" + categorias + "]";
+	}
+
 	public Long getId() {
 		return id;
 	}
